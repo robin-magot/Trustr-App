@@ -1,26 +1,30 @@
-.card-text h3 {
-  font-size: 20px;
+.card-trustr h1 {
+  font-size: 40px;
   font-weight: bold;
-  color: #4a1f12
-  margin: 0;
+  color: #4a1f12;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.card-text h2 {
+.card-trustr h2 {
   font-size: 18px;
   font-weight: bold;
-  color: #943e0c
-  margin: 0;
+  color: #943e0c;
+  margin: 1px;
+  text-align: center;
 }
 
-.card-text h1 {
+.card-trustr h3 {
   font-size: 16px;
   font-weight: bold;
-  color: #d05712
-  margin: 0;
+  color: #d05712;
+  margin: 1px;
+  text-align: center;
 }
 
-.card-text p {
+.card-trustr p {
   font-size: 14px;
   line-height: 1.4;
-  color: grey
+  color: grey;
+  text-align: center;
 }
