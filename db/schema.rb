@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_191342) do
+ActiveRecord::Schema.define(version: 2021_10_16_084833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "indicators", force: :cascade do |t|
+    t.string "category"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "url"
+    t.string "product_title"
+    t.string "product_image"
+    t.string "name"
+    t.string "string"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.bigint "indicator_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["indicator_id"], name: "index_scores_on_indicator_id"
+    t.index ["product_id"], name: "index_scores_on_product_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +56,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_191342) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "users"
+  add_foreign_key "scores", "indicators"
+  add_foreign_key "scores", "products"
 end
