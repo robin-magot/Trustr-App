@@ -4,17 +4,28 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
 .btn-brown {
-color : #916349;
+  color : white;
+  font-size: 18px;
+  background-color:#916349;
+  border-radius:40px;
+}
+
+.btn-border {
+  color: #943e0c;
+  border: 1px solid #943e0c;
+  padding: 5px 15px;
 }
 
 .search {
     &__container {
-        padding-top: 64px;
+        padding-top: 30px;
+        text-align: center;
     }
 
     &__input {
         width: 100%;
         padding: 12px 24px;
+        margin-bottom: 10px;
         background-color: transparent;
         font-size: 14px;
         line-height: 18px;
@@ -31,9 +42,9 @@ color : #916349;
         transform-style: preserve-3d;
 
         &::placeholder {
-            color: color(#916349 a(0.8));
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+          color: color(#916349 a(0.8));
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
         }
     }
 }
