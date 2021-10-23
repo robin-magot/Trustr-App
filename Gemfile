@@ -65,3 +65,5 @@ gem 'devise'
 
 gem 'nokogiri'
 gem 'open-uri'
+
+gem 'simple_token_authentication'
