@@ -7,7 +7,18 @@
   flex-grow: 0;
 }
 
-.navbar-trustr .navbar-brand img {
-  width: 5px;
-  height: 5px;
+.navbar .brand {
+    max-height: 40px;
+    max-width: 30%;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
 }
+
+.image_fouine {
+  height: 35px;
+ }
+
+.navbar-light .navbar-nav .nav-link {
+  color: #943e0c;
+ }
