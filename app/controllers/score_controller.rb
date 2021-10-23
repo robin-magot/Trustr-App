@@ -16,7 +16,7 @@ def scrape_pappers_from_website(siret)
   return @pappers_info
 end
 
------------------------------------------------------
+#-----------------------------------------------------
 
 
-FETCHING API
+#FETCHING API
