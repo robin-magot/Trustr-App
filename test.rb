@@ -19,7 +19,6 @@ end.compact.first.value
   end.compact
   p siren
   # TODO: look for info based on SIRET.
-  byebug
   env = "9a9910fbc8ff8a6a456fbda3d29505a0a478793ec7582dbf"
   url = "https://api.pappers.fr/v2/entreprise?api_token=#{env}&siren=#{siren}"
   company_serialized = URI.open(url).read
