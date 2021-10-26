@@ -41,3 +41,30 @@
   margin-top: 5px;
 
 }
+
+.card {
+  color: grey;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #DDD5D1;
+  background-clip: border-box;
+  border: 1px solid #916349;
+  border-radius: 2px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.card-title {
+  color: #916349;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.card-center {
+  margin-top: 10px;
+  text-align: center;
+}
