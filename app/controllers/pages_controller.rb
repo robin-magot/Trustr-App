@@ -3,3 +3,8 @@ class PagesController < ApplicationController
   def home
   end
 end
+
+
+
+# input simple form -> product controller #create
+# url -> product -> product.new 
