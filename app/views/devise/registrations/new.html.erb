@@ -20,7 +20,7 @@
   <div class="form-actions">
     <%= f.button :submit, "S'enregistrer", class: "btn-brown" %>
   </div>
+   &nbsp;
+    <%= link_to "Déjà un compte ? Par ici", new_session_path(resource_name), class: "btn" %><br />
 <% end %>
 </div>
-
-<%= render "devise/shared/links" %>
