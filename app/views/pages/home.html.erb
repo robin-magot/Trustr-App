@@ -6,9 +6,15 @@
     <h2> TRUSTR <h2>
   </div>
   <div class="search__container">
-    <input class="search__input" type="text" placeholder=" ">
-    <button name="button" type="submit" class="btn btn-flat btn-brown">
-    <i class="fas fa-search"></i> Rechercher
+    <!--<input class="search__input" type="text" placeholder=" "> 
+    <button name="button" type="submit" class="btn btn-flat btn-brown">-->
+      <%= simple_form_for @product do |f| %>
+        <%= f.text_field :url, input_html: {class:"search__input"} %>
+        <%= button_tag type: "submit", class:"btn btn-flat btn-brown" do %>
+          <i class="fas fa-search"></i>Rechercher
+        <% end %>
+      <% end %>
+    </div>
   </div>
    <div class="card-trustr">
     <a href="about_us.html"><h4> A propos de nous <h4></a>

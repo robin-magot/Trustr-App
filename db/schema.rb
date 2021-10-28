@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_130004) do
     t.string "product_title"
     t.string "product_image"
     t.string "name"
-    t.string "string"
+    t.string "city"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
