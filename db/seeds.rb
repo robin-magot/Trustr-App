@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  inducator = Indicator.new(
+    url: "https://www.respire.co"
+    name: "respire"
+    product_image: Faker::Avatar.image(slug: "my-own-slug"),
+    name: "Faker::Quotes::Shakespeare,"
+  )
+  indicator.save!
+end
