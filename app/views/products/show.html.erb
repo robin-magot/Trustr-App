@@ -1,0 +1,15 @@
+ <div class="card-center">
+  <%= @product.url %>
+  <%= @product.name %>
+</div>
+
+<div>
+  <% @product.indicators.each do |indicator|%>
+    <div>
+      <%= indicator.title %>
+      :<%= indicator.content %>
+      :<%= indicator.trusted? %>
+    </div>
+  <% end %>
+</div>
+

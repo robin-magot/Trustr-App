@@ -5,18 +5,22 @@ class ProductsController < ApplicationController
     url = UrlSplit.new(user_url).call
     siren = ScrappingSiren.new(url).call
     papper_data = ApiScore.new(siren).call
-    product = Product.create(url: url, name: score[:name] )
+    product = Product.create(user: current_user, url: url, name: papper_data[:name])
     # créer les instances de score avec les différents indicateurs OK
     # indicateur ID / product ID indicator.all .each do indicator score hash crochet indicator, si la valeur est differente de nil alors . new
     papper_data.each do |title, content|
       indicator = Indicator.create(title: title, content: content)
-      score = Score.create()
+      score = Score.create(product: product, indicator: indicator)
     end
     # quand tout est finit, redirect to, product show. 
     #tout redirect vers la show de product
-    redirect_to: product_pass(product)
+    redirect_to product_path(product)
+  end
+  def show
+    @product = Product.find (params[:id])
   end
 end
+
 
 # todo list 26/10
 # mettre en place le hash, et tester
