@@ -4,12 +4,17 @@ class ProductsController < ApplicationController
     user_url = params[:product][:url] 
     url = UrlSplit.new(user_url).call
     siren = ScrappingSiren.new(url).call
-    score = ApiScore.new(siren).call
+    papper_data = ApiScore.new(siren).call
     product = Product.create(url: url, name: score[:name] )
-    #créer les instances de score avec les différents indicateurs OK
-    #indicateur ID / product ID indicator.all .each do indicator score hash crochet indicator, si la valeur est differente de nil alors . new
+    # créer les instances de score avec les différents indicateurs OK
+    # indicateur ID / product ID indicator.all .each do indicator score hash crochet indicator, si la valeur est differente de nil alors . new
+    papper_data.each do |title, content|
+      indicator = Indicator.create(title: title, content: content)
+      score = Score.create()
+    end
     # quand tout est finit, redirect to, product show. 
     #tout redirect vers la show de product
+    redirect_to: product_pass(product)
   end
 end
 
