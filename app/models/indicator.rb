@@ -1,7 +1,7 @@
 class Indicator < ApplicationRecord
   has_one :score
 
-  def valid?
+  def trusted?
     return false if content == "null"
 
     return content == "true" if title == "ouvert"

@@ -1,14 +1,15 @@
  <div class="card-center">
-    <p>www.nomdusite.fr</p>
+  <%= @product.url %>
+  <%= @product.name %>
 </div>
 
-<%= @general_score %>
+<div>
+  <% @product.indicators.each do |indicator|%>
+    <div>
+      <%= indicator.title %>
+      :<%= indicator.content %>
+      :<%= indicator.trusted? %>
+    </div>
+  <% end %>
+</div>
 
-<%= @products.title %>
-<% @products.indicators.each do |indicators|%>
-  if indicators.valid
-    return <div class="cercle-green">
-  else
-    return <div class="cercle-red">
-  end
-<% end%>
