@@ -1,15 +1,22 @@
- <div class="card-center">
-  <%= @product.url %>
-  <%= @product.name %>
+<div class="card-center card-trustr">
+  <h2><%= @product.name %><h2>
 </div>
 
-<div>
-  <% @product.indicators.each do |indicator|%>
-    <div>
-      <%= indicator.title %>
-      :<%= indicator.content %>
-      :<%= indicator.trusted? %>
+<div class="col">
+  <div class="card">
+    <div class="card-body">
+      <% @product.indicators.each do |indicator|%>
+      <div class="card-center">
+        <%= indicator.title %>
+        :<%= indicator.content %>
+         <div class="cercle-<%=indicator.trusted? ? 'green' : 'red'%>">
+         </div>
+      </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+</div>  
 
+<div class="center-bloc">
+  <a href=<%=root_path%> class="card-center card-trustr btn btn-flat btn-brown"> Nouvelle Recherche </a>
+</div>
