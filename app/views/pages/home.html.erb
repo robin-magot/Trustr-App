@@ -5,18 +5,18 @@
   <div class="card-trustr">
     <h2> TRUSTR <h2>
   </div>
-  <div class="search__container">
-    <!--<input class="search__input" type="text" placeholder=" "> 
-    <button name="button" type="submit" class="btn btn-flat btn-brown">-->
+  <div>
+    <% if user_signed_in? %>
       <%= simple_form_for @product do |f| %>
         <%= f.text_field :url, input_html: {class:"search__input"} %>
-        <%= button_tag type: "submit", class:"btn btn-flat btn-brown" do %>
-          <i class="fas fa-search"></i>Rechercher
+        <%= button_tag type: "submit", class:"btn btn-flat btn-brown mt-3 w-100"  do %>
+          <i class="fas fa-search"></i> Rechercher
         <% end %>
       <% end %>
-    </div>
+    <% end %>
   </div>
-   <div class="card-trustr">
+</div>
+  <div class="card-trustr">
     <a href="about_us.html"><h4> A propos de nous <h4></a>
   </div>
 </div>

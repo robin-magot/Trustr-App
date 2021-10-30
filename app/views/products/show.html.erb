@@ -1,0 +1,14 @@
+ <div class="card-center">
+    <p>www.nomdusite.fr</p>
+</div>
+
+<%= @general_score %>
+
+<%= @products.title %>
+<% @products.indicators.each do |indicators|%>
+  if indicators.valid
+    return <div class="cercle-green">
+  else
+    return <div class="cercle-red">
+  end
+<% end%>
