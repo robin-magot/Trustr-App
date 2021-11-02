@@ -12,7 +12,7 @@ class ApiScore
       siren: company['siren'],
       activité: company['libelle_code_naf'],
       création: company['date_creation'],
-      origine: company['siege']['pays'],
+      origine: company['siege']['code_pays'],
       ville: company['siege']['ville'],
       ouvert: company['siege']['etablissement_cesse']
     }
