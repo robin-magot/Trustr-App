@@ -1,15 +1,9 @@
- <div class="card-center">
-  <%= @product.url %>
-  <%= @product.name %>
+<div class="card-center card-trustr">
+  <h2><%= @product.name %><h2>
 </div>
 
-<div>
-  <% @product.indicators.each do |indicator|%>
-    <div>
-      <%= indicator.title %>
-      :<%= indicator.content %>
-      :<%= indicator.trusted? %>
-    </div>
-  <% end %>
+<div class="center-bloc">
+  <div class="card-center card-trustr btn btn-flat btn-brown">
+  <h5> Nouvelle Recherche <h5>
+  </div>
 </div>
-
