@@ -41,6 +41,15 @@
   margin-top: 5px;
 }
 
+.card-trustr h6 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #916349;
+  margin: 1px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
 .card-trustr p {
   font-size: 14px;
   color: grey;
@@ -64,17 +73,14 @@
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 10px;
+  height: 600px;
+  overflow: auto;
 }
 
 .card-title {
   color: #916349;
   text-align: left;
   text-transform: capitalize;
-}
-
-.card-center {
-  margin-top: 10px;
-  text-align: center;
 }
 
 .score-square {

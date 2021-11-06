@@ -1,26 +1,56 @@
-<div class="card-center card-trustr">
-  <h2><%= @product.name %><h2>
-  <h2><%= @product.rating %><h2>
-</div>
-<div class="row">
-  <div class="col-6">
-    <div class="score-square text-center" > <%= @product.indicators_trusted_count %> / <%= @product.indicators.count  %></div>
-    <div class="card">
-      <div class="card-body">
-        <% @product.indicators.each do |indicator|%>
-        <div class="card-center">
-          <%= indicator.title %>
-          => <%= indicator.content %>
-          <div class="cercle-<%=indicator.trusted? ? 'green' : 'red'%>">
-          </div>
+<div class="container-fluid"> 
+  <div class="row">
+    <div class="col-12">
+      <div class="card-trustr">
+        <h1><%= @product.name %></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-trustr card-header text-center">
+          <h6>TEST</h6>
+          <div class="score-square text-center" > <%= @product.indicators_trusted_count %> / <%= @product.indicators.count  %></div>
         </div>
-        <% end %>
+        <div class="card-body">
+          <% @product.indicators.each_with_index do |indicator, index| %>
+            <div class="mt-2 d-flex align-items-top">
+              <div class="cercle-<%=indicator.trusted? ? 'green' : 'red'%> mr-2 mt-1"></div>
+              <div class="font-weight-bold"><%= indicator.title.capitalize %> </div> 
+              <div>&nbsp;: <%= indicator.content %> </div>
+            </div>
+            <% if index+1 != @product.indicators.size %>
+              <hr/>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="card" >
+      <div class="card-trustr card-header text-center">
+        <h6>AVIS CLIENTS</h6>
+        <div class="score-square text-center" > <%= @product.rating %> / 5 </div>
+      </div>
+        <div class="card-body">
+          <% @product.reviews.each_with_index do |review, index| %>
+            <div class="mt-2">
+              <p class="font-weight-bold"><%= review.title %></p>
+              <p class="text-justify"><%= review.description %><p>
+              <p class="font-italic"><%= review.date %><p>
+            </div>
+            <% if index+1 != @product.reviews.size %>
+              <hr/>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-  
-
 <div class="center-bloc">
-  <a href=<%=root_path%> class="card-center card-trustr btn btn-flat btn-brown"> Nouvelle Recherche </a>
+  <a href=<%=root_path%> class="mt-2 card-trustr btn btn-flat btn-brown"> Nouvelle Recherche </a>
 </div>

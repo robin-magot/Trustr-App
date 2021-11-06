@@ -8,10 +8,10 @@ class ScrappingReviewTp
     response = URI.open("https://fr.trustpilot.com/review/#{url_name}").read
     html_doc = Nokogiri::HTML(response)
     rating = html_doc.search(".styles_rating__1Xlha").text
-    reviews = JSON.parse(html_doc.search("script").children.last.text)["props"]["pageProps"]["reviews"].map do |review|
-      review["text"]
+    review_data = JSON.parse(html_doc.search("script").children.last.text)["props"]["pageProps"]["reviews"].map do |review|
+      [review["title"], review["text"], review["dates"]["publishedDate"]]
     end
-    { rating: rating, reviews: reviews }
+    { rating: rating, review_data: review_data }
   end
 end
 
