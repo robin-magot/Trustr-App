@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
   #skip_before_action :authenticate_user!, only: :home
   def create
     user_url = params[:product][:url] 
-    review = ScrappingReviewTp.new(user_url).scrapdeouf
+    rating = ScrappingReviewTp.new(user_url).scrapdeouf[:rating]
     url = UrlSplit.new(user_url).call
     siren = ScrappingSiren.new(url).call
     papper_data = ApiScore.new(siren).call
-    product = Product.create(user: current_user, string: review, url: url, name: papper_data[:name])
+    product = Product.create(user: current_user, rating: rating, url: url, name: papper_data[:name])
     # créer les instances de score avec les différents indicateurs OK
     # indicateur ID / product ID indicator.all .each do indicator score hash crochet indicator, si la valeur est differente de nil alors . new 
     papper_data.each do |title, content|
