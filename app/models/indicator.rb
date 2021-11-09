@@ -4,6 +4,8 @@ class Indicator < ApplicationRecord
   def trusted?
     return false if content == "null"
 
+    return false if content == "Aucune entreprise trouvée"
+
     return false if content == "true" if title == "ouvert"
 
     if title == "origine"
