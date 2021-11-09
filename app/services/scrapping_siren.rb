@@ -12,6 +12,7 @@ class ScrappingSiren
       element = html_doc.at("a:contains('#{name}')")
       element.attribute("href") unless element.nil?
     end.compact.first.value
+    url_to_scrap_for_siret = "#{url}#{url_to_scrap_for_siret}" unless url_to_scrap_for_siret.start_with?("https")      
     response1 = URI.open(url_to_scrap_for_siret).read
     html_doc1 = Nokogiri::HTML(response1)
     paragraphs = html_doc1.search("p")
