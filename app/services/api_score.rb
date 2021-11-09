@@ -7,7 +7,7 @@ class ApiScore
     valid_url = URI.parse(url)
     req = Net::HTTP.new(valid_url.host, valid_url.port)
     req.use_ssl = true
-    res = req.request_head(valid_url.path)
+    res = req.request_head(valid_url)
     res.code == "200"
   end
 
