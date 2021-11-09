@@ -1,12 +1,12 @@
 require 'uri'
 
-class UrlSplit
+class UrlHost
   def initialize(url)
     @url = url
   end
 
   def call 
-    uri = URI(@url) 
-    return uri.scheme + "://" + uri.host
+    uri = URI(@url)
+    uri.host
   end
 end

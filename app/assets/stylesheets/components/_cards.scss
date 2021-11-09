@@ -33,6 +33,23 @@
   margin-top: 50px;
 }
 
+.card-trustr h5 {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.card-trustr h6 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #916349;
+  margin: 1px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
 .card-trustr p {
   font-size: 14px;
   color: grey;
@@ -63,6 +80,8 @@
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 10px;
+  height: 600px;
+  overflow: auto;
 }
 
 .card-title {
@@ -71,9 +90,13 @@
   text-transform: capitalize;
 }
 
-.card-center {
-  margin-top: 10px;
-  text-align: center;
+.score-square {
+  width: 70px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: #916349 1px solid;
+  margin: 0 auto;
+  text: center
 }
 
 .card-pictos {

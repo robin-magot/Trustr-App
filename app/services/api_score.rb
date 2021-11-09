@@ -8,11 +8,11 @@ class ApiScore
     company_serialized = URI.open(url).read
     company = JSON.parse(company_serialized)
     company_info = {
-      name: company['denomination'],
+      nom: company['denomination'],
       siren: company['siren'],
       activité: company['libelle_code_naf'],
       création: company['date_creation'],
-      origine: company['siege']['pays'],
+      pays: company['siege']['code_pays'],
       ville: company['siege']['ville'],
       ouvert: company['siege']['etablissement_cesse']
     }
