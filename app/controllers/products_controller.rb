@@ -9,8 +9,10 @@ class ProductsController < ApplicationController
     siren = ScrappingSiren.new(url).call
     papper_data = ApiScore.new(siren).call
     product = Product.create(user: current_user, rating: rating, url: url, name: papper_data[:nom])
-    review_data.each do |title, description, created_date|
-      Review.create(title: title, description: description, date: created_date, product: product)
+    if review_data
+      review_data.each do |title, description, created_date|
+        Review.create(title: title, description: description, date: created_date, product: product)
+      end
     end
 
     # créer les instances de score avec les différents indicateurs OK

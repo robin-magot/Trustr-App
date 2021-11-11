@@ -4,7 +4,7 @@ class ScrappingSiren
   end
 
   def call
-    list_pages = ["Mentions légales", "CGV", "conditions générales de vente", "CGU", "à propos", "RCS"]
+    list_pages = ["Mentions légales","Mentions Légales", "CGV", "conditions générales de vente", "CGU", "à propos", "RCS"]
     url = @url #url = Product.find(params[:id])&.url
     response = URI.open(url).read
     html_doc = Nokogiri::HTML(response)

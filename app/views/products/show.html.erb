@@ -31,11 +31,16 @@
 
     <div class="col-6">
       <div class="card" >
-      <div class="card-trustr card-header text-center">
-        <h6>AVIS CLIENTS</h6>
-        <div class="score-square text-center" > <%= @product.rating %> / 5 </div>
-      </div>
+        <div class="card-trustr card-header text-center">
+          <h6>AVIS CLIENTS</h6>
+        <% if @product.reviews != [] %>
+          <div class="score-square text-center" > <%= @product.rating %> / 5 </div>
+        <% else %>
+          <p> Aucun avis clients trouvés </p>
+        <% end %>
+        </div>
         <div class="card-body">
+        <% if @product.reviews != [] %>
           <% @product.reviews.each_with_index do |review, index| %>
             <div class="mt-2">
               <p class="font-weight-bold"><%= review.title %></p>
@@ -46,6 +51,13 @@
               <hr/>
             <% end %>
           <% end %>
+        <% else %>
+          <p> Allez sur google ! </p>
+          <ul>
+            <li><a href="https://www.google.fr"> google </a></li>
+            <li><a href="https://www.yahoo.fr"> yahoo </a></li>
+          </ul>
+        <% end %>
         </div>
       </div>
     </div>
