@@ -11,7 +11,7 @@
     <div class="col-6">
       <div class="card">
         <div class="card-trustr card-header text-center">
-          <h6>TEST</h6>
+          <h6>FIABILITE</h6>
           <div class="score-square text-center" > <%= @product.indicators_trusted_count %> / <%= @product.indicators.count  %></div>
         </div>
         <div class="card-body">
@@ -52,10 +52,13 @@
             <% end %>
           <% end %>
         <% else %>
-          <p> Allez sur google ! </p>
+          <p> Nous n'avons pas trouvé d'avis sur cette entreprise. Vous pouvez tout de même rechercher des avis par vous même sur des plateformes alternatives. Lorsque vous vous trouverez sur ces plateformes, insérez simplement le lien, où le nom de la marque recherchées dans la barre de recherche. </p>
           <ul>
-            <li><a href="https://www.google.fr"> google </a></li>
-            <li><a href="https://www.yahoo.fr"> yahoo </a></li>
+            <li><a href="https://www.google.fr/maps/"> Google maps </a></li>
+            <li><a href="https://fr.trustpilot.com/"> Trust Pilot </a></li>
+            <li><a href="https://www.avis-verifies.com/index.php?page=mod_annuaire"> Avisvérifiés.com </a></li>
+            <li><a href="https://www.trustedshops.fr/shops/"> Trustedshops.fr </a></li>
+            <li><a href="https://fr.custplace.com/"> Custplace.com </a></li>
           </ul>
         <% end %>
         </div>
